@@ -46,4 +46,25 @@ export class EmpleadoService {
   getEmpleados() {
     return this.empleado_list.slice()
   }
+
+  deleteEmpleado(i: number) {
+    this.empleado_list.splice(i, 1)
+  }
+
+  addEmpleado(empleado: Empleado) {
+    this.empleado_list.push(empleado)
+  }
+
+  getEmpleado(index: number) {
+    return this.empleado_list[index]
+  }
+
+  editEmpleado(empleado: Empleado, idEmpleado: number) {
+    this.empleado_list[idEmpleado].full_name = empleado.full_name
+    this.empleado_list[idEmpleado].email = empleado.email
+    this.empleado_list[idEmpleado].sex = empleado.sex
+    this.empleado_list[idEmpleado].admission_date = empleado.admission_date
+    this.empleado_list[idEmpleado].civil_status = empleado.civil_status
+    this.empleado_list[idEmpleado].phone = empleado.phone
+  }
 }
